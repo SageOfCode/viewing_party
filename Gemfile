@@ -16,6 +16,8 @@ gem 'coffee-rails', '~> 4.2'
 gem 'bootsnap'
 gem 'jbuilder', '~> 2.5'
 gem 'bcrypt'
+gem 'faraday'
+gem 'figaro'
 
 group :development, :test do
   gem 'pry'
