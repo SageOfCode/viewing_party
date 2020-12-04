@@ -1,0 +1,5 @@
+<h2>Top Rated Movies</h2>
+<% @movies.each do |movie| %>
+  <%= link_to "#{movie[:title]}", "/movies/#{movie[:id]}" %><br>
+  <%= movie[:vote_average] %><br><br>
+<% end %>
