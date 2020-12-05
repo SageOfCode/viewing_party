@@ -1,4 +1,4 @@
-require "./app/service/movie_api_service.rb"
+require "rails_helper"
 
 RSpec.describe MovieApiService do
 
@@ -8,10 +8,18 @@ RSpec.describe MovieApiService do
   end
 
   describe "methods" do
-    it "conn" do
-      api = MovieApiService.new
-      expect(api.conn).to eq("hello")
+    VCR.use_cassette("movies_search") do
+
+      # it "conn" do
+      #   api = MovieApiService.new
+      #   expect(api.conn).to eq(Faraday.class)
+      # end
+
+      it "movies" do
+        api = MovieApiService.new
+        movies = api.movies("star")
+        expect(movies.count).to eq(40)
+      end
     end
   end
-
 end
