@@ -14,7 +14,7 @@ RSpec.describe "as a logged in user" do
        expect(current_path).to eq("/dashboard")
 
        expect(page).to have_content("Welcome #{user.email}!")
-       expect(page).to have_button("Find Movies")
+       expect(page).to have_button("Discover Movies")
        expect(page).to have_content("Friends")
        expect(page).to have_content("Viewing Parties")
      end
