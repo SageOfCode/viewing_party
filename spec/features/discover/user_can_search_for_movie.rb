@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "user can search movies through the find movies button" do
   before :each do
-    user = User.create!(email: "grant@awesomeguy.com", password: "password", role: 1)
+    user = User.create!(username: "Grant", email: "grant@awesomeguy.com", password: "password", role: 1)
 
     visit "/login"
 

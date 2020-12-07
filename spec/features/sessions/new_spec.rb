@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "as a user" do
   describe "I can login" do
      it "can login a user" do
-       user = User.create!(email: "grant@awesomeguy.com", password: "password", role: 1)
+       user = User.create!(username: "Grant", email: "grant@awesomeguy.com", password: "password", role: 1)
 
        visit "/login"
 
@@ -17,7 +17,7 @@ RSpec.describe "as a user" do
        expect(page).to have_content("You're logged in as #{user.email}")
      end
      it "wrong username test" do
-       user = User.create!(email: "grant@awesomeguy.com", password: "password")
+       user = User.create!(username: "Grant", email: "grant@awesomeguy.com", password: "password")
 
        visit "/login"
 
