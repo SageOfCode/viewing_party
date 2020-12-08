@@ -14,7 +14,7 @@ RSpec.describe "as a user" do
 
        expect(current_path).to eq("/dashboard")
 
-       expect(page).to have_content("You're logged in as #{user.email}")
+       expect(page).to have_content("You're logged in as #{user.username}")
      end
      it "wrong username test" do
        user = User.create!(username: "Grant", email: "grant@awesomeguy.com", password: "password")
