@@ -1,5 +1,5 @@
 class DashboardController < ApplicationController
-  def index 
-
+  def index
+    @friends = current_user.friends
   end
-end 
+end
