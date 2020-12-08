@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "user can search movies through the find movies button" do
   before :each do
-    user = User.create!(email: "grant@awesomeguy.com", password: "password", role: 1)
+    user = User.create!(username: "Grant", email: "grant@awesomeguy.com", password: "password", role: 1)
 
     visit "/login"
 
@@ -21,7 +21,7 @@ RSpec.describe "user can search movies through the find movies button" do
     expect(current_path).to eq("/discover")
 
     click_button "Find Top Rated Movies"
-    save_and_open_page
+    # save_and_open_page
 
     expect(page).to have_css('.movies')
     movies = find('.movies').text

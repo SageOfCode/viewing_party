@@ -1,6 +1,8 @@
 <h1>Register</h1>
 
 <%= form_with url: '/registration/new', local: true do |form| %>
+  <%= form.label :username %>
+  <%= form.text_field :username %>
   <%= form.label :email %>
   <%= form.text_field :email %>
   <%= form.label :password %>
