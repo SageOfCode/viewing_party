@@ -11,6 +11,13 @@ class UserController < ApplicationController
     redirect_to '/dashboard'
   end
 
+  def friends
+    user = current_user
+    friend = User.find_by(email: params[:email])
+    user.add_friends(user.id, friend.id)
+    redirect "/dashboard"
+  end
+
   private
 
   def user_params
