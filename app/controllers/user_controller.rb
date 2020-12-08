@@ -12,10 +12,14 @@ class UserController < ApplicationController
   end
 
   def friends
-    user = current_user
-    friend = User.find_by(email: params[:email])
-    user.add_friends(user.id, friend.id)
-    redirect "/dashboard"
+    friend = User.find_by(email: params[:user_email])
+    if !friend
+      flash[:notice] = "User does not Exist"
+      redirect_to dashboard_path
+    else
+      current_user.add_friends(current_user.id, friend.id)
+      redirect_to dashboard_path
+    end
   end
 
   private
