@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#login'
   post '/user/login', to: 'sessions#login'
+  post '/user/friends', to: 'user#friends'
 
   get '/discover', to: 'discover#index'
 
