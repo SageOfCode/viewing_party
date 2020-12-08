@@ -1,5 +1,5 @@
 # <div align="center"> Viewing Party
-<img src="https://giphy.com/gifs/l2Sq70zdilk5aYYa4/html5">
+<img src="https://media.giphy.com/media/l2Sq70zdilk5aYYa4/giphy.gif">
 
  ## Project Partners
 [Grant Dempsey](https://github.com/GDemps) <br>
