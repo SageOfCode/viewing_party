@@ -6,6 +6,8 @@ RSpec.describe "as a user" do
 
       visit '/registration'
 
+
+      fill_in :username, with: "Steve123"
       fill_in :email, with: "steve@test.com"
       fill_in :password, with: "Stev3"
       fill_in :confirm_password, with: "Stev3"

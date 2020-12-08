@@ -18,7 +18,7 @@ RSpec.describe "as a user" do
 
   describe "when user is already logged in as a current_user" do
     it "will not display login or register button" do
-      user = User.create!(email: "grant@awesomeguy.com", password: "password")
+      user = User.create!(username: "Grant", email: "grant@awesomeguy.com", password: "password")
 
       visit "/login"
 
