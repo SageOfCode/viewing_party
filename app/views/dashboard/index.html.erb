@@ -4,6 +4,18 @@
 <body>
   <section>
     <p>Friends</p>
+    <%= form_tag "/user/friends", method: :post do %>
+      <%= text_field_tag :user_email %>
+      <%= submit_tag 'Add Friend' %>
+    <% end %>
+    <% if current_user.friends == nil %>
+      <p>You currently have no friends</p>
+    <% else %>
+    <%= require 'pry'; binding.pry %>
+      <% current_user.friends.each do |friend| %>
+        <%= friend.username %>
+      <% end %>
+    <% end %>
   </section><br>
 
   <section>
