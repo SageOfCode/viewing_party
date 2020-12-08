@@ -1,24 +1,24 @@
-<h1><% current_user %> Welcome <%= current_user.username %>!</h1>
+<h1>Welcome <%= current_user.username %>!</h1>
 <%= button_to "Discover Movies", "/discover", method: :get %><br>
 
 <body>
   <section>
-    <p>Friends</p>
+    <h2>Friends</h2>
     <%= form_tag "/user/friends", method: :post do %>
       <%= text_field_tag :user_email %>
       <%= submit_tag 'Add Friend' %>
     <% end %>
-    <% if current_user.friends == nil %>
+    <h3>Friends List:</h3>
+    <% if @friends.empty? %>
       <p>You currently have no friends</p>
     <% else %>
-    <%= require 'pry'; binding.pry %>
-      <% current_user.friends.each do |friend| %>
+      <% @friends.each do |friend| %>
         <%= friend.username %>
       <% end %>
     <% end %>
   </section><br>
 
   <section>
-    <p>Viewing Parties</p>
+    <h2>Viewing Parties</h2>
   </section>
 </body>
