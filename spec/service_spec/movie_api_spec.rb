@@ -28,6 +28,8 @@ RSpec.describe MovieApiService do
         expect(movie[:title]).to eq("Your Name.")
         expect(movie[:runtime]).to eq(106)
         expect(movie[:vote_average]).to eq(8.6)
+        expect(movie[:images][:backdrops][0][:file_path]).to eq("/mMtUybQ6hL24FXo0F3Z4j2KG7kZ.jpg")
+        require "pry"; binding.pry
       end
     end
   end

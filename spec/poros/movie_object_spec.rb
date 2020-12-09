@@ -8,7 +8,8 @@ RSpec.describe MovieObject do
               genres: [{:id=>10749, :name=>"Romance"}, {:id=>16, :name=>"Animation"}, {:id=>18, :name=>"Drama"}],
               overview: "Tots Awesome Movie",
               credits: {cast: [{name: "Ryunosuke Kamiki", character: "Taki Tachibana (voice)"}, {name: "Ryunosuke Kamiki", character: "Baka Monikso (voice)"}, {name: "Kazuhiko Inoue", character: "Taki's father (voice)"}]},
-              reviews: {results: {author: "Jose Lopes", content: "Amazing"}}
+              reviews: {results: {author: "Jose Lopes", content: "Amazing"}},
+              images: {backdrops: [{file_path: "/mMtUybQ6hL24FXo0F3Z4j2KG7kZ.jpg"}]}
             }
     @movie = MovieObject.new(@test_movie)
   end
@@ -21,6 +22,7 @@ RSpec.describe MovieObject do
       expect(@movie.overview).to eq("Tots Awesome Movie")
       expect(@movie.cast).to eq(@test_movie[:credits][:cast])
       expect(@movie.reviews).to eq(@test_movie[:reviews][:results])
+      expect(@movie.image).to eq("/mMtUybQ6hL24FXo0F3Z4j2KG7kZ.jpg")
     end
 
     it "detail_genres" do
