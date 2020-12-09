@@ -7,6 +7,8 @@ RSpec.describe MovieApiService do
         movies = MovieApiService.movies("star")
         expect(movies).to be_an(Array)
         expect(movies.count).to eq(40)
+        expect(movies[0][:title]).to eq("Star Wars")
+        expect(movies[25][:title]).to eq("Robot Chicken: Star Wars")
       end
     end
 
@@ -15,12 +17,17 @@ RSpec.describe MovieApiService do
         movies = MovieApiService.top_rated_movies
         expect(movies).to be_an(Array)
         expect(movies.count).to eq(40)
+        expect(movies[0][:title]).to eq("Gabriel's Inferno Part III")
+        expect(movies[30][:title]).to eq("Mortal Kombat Legends: Scorpion's Revenge")
       end
     end
 
     it "movie_details" do
       VCR.use_cassette("movie_details") do
-        MovieApiService.movie_details(372058)
+        movie = MovieApiService.movie_details(372058)
+        expect(movie[:title]).to eq("Your Name.")
+        expect(movie[:runtime]).to eq(106)
+        expect(movie[:vote_average]).to eq(8.6)
       end
     end
   end
