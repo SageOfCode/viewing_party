@@ -23,7 +23,7 @@ RSpec.describe "As an authenticated user" do
 
         click_link "Historias lamentables"
 
-        expect(current_path).to eq "/movies/650747"
+        expect(current_path).to eq("/movies/650747")
         expect(page).to have_content("Historias lamentables")
       end 
     end

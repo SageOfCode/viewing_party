@@ -18,4 +18,7 @@ Rails.application.routes.draw do
 
   get '/movies', to: 'movies#index'
   get '/movies/search', to: 'movies#search'
+  get '/movies/:movie_api_id', to: 'movies#show'
+
+  get '/party/:movie_id', to: 'party#show'
 end
