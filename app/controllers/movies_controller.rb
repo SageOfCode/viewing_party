@@ -6,4 +6,8 @@ class MoviesController < ApplicationController
   def search 
     @movies = MovieApiService.movies(params[:movie])
   end
+
+  def show 
+    @movie = MovieApiService.movie_details(params[:movie_api_id])
+  end
 end
