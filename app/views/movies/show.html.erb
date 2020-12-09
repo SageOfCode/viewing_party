@@ -1,0 +1,13 @@
+<h1>Title: <%= @movie.title %></h1>
+<%= button_to "Create Viewing Party for #{@movie.title}", "/party/#{@movie.id}" %>
+
+<p>Vote Average: <%= @movie.vote_average %></p>
+<p>Runtime: <%= @movie.detail_runtime %></p>
+<p>Genres: <%= @movie.detail_genres %></p>
+<p>Summary: <%= @movie.overview %></p>
+<p>Cast: <%= @movie.detail_cast %></p>
+<p>Number of Reviews: <%= @movie.reviews.count %></p>
+<% @movie.reviews.each do |review| %>
+  <p>Review Author: <%= review[:author] %></p>
+  <p>Review: <%= review[:content] %></p>
+<% end %>
