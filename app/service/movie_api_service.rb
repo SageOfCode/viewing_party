@@ -6,8 +6,7 @@ class MovieApiService
     response = conn.get("/3/movie/#{movie_id}") do |req|
       req.params[:append_to_response] = "credits,reviews"
     end
-    json_response = JSON.parse(response.body, symbolize_names: true)
-    MovieObject.new(json_response)
+    JSON.parse(response.body, symbolize_names: true)
   end
 
   def self.top_rated_movies

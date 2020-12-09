@@ -8,11 +8,21 @@ RSpec.describe MovieObject do
               genres: [{:id=>10749, :name=>"Romance"}, {:id=>16, :name=>"Animation"}, {:id=>18, :name=>"Drama"}],
               overview: "Tots Awesome Movie",
               credits: {cast: [{name: "Ryunosuke Kamiki", character: "Taki Tachibana (voice)"}, {name: "Ryunosuke Kamiki", character: "Baka Monikso (voice)"}, {name: "Kazuhiko Inoue", character: "Taki's father (voice)"}]},
-              reviews: {author: "Jose Lopes", content: "Amazing"}
+              reviews: {results: {author: "Jose Lopes", content: "Amazing"}}
             }
     @movie = MovieObject.new(@test_movie)
   end
   describe "methods" do
+    it "attr_readers" do
+      expect(@movie.title).to eq("Test_movie")
+      expect(@movie.vote_average).to eq(10)
+      expect(@movie.runtime).to eq(106)
+      expect(@movie.genres).to eq(@test_movie[:genres])
+      expect(@movie.overview).to eq("Tots Awesome Movie")
+      expect(@movie.cast).to eq(@test_movie[:credits][:cast])
+      expect(@movie.reviews).to eq(@test_movie[:reviews][:results])
+    end
+
     it "detail_genres" do
       expected = ["Romance","Animation","Drama"]
       expect(@movie.detail_genres).to eq(expected)
