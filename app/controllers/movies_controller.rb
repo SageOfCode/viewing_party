@@ -1,13 +1,13 @@
 class MoviesController < ApplicationController
   def index
-    @movies = MovieApiService.top_rated_movies
+    @movies = SearchFacade.top_movies
   end
 
   def search 
-    @movies = MovieApiService.movies(params[:movie])
+    @movies = SearchFacade.movie_search(params[:movie])
   end
 
   def show 
-    @movie = MovieApiService.movie_details(params[:movie_api_id])
+    @movie = SearchFacade.movie_info(params[:movie_api_id])
   end
 end
