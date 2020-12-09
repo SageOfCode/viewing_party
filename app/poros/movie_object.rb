@@ -5,8 +5,8 @@ class MovieObject
               :genres,
               :overview,
               :cast,
-              :reviews
-
+              :reviews,
+              :image
   def initialize(movie)
     @title = movie[:title]
     @vote_average = movie[:vote_average]
@@ -15,6 +15,7 @@ class MovieObject
     @overview = movie[:overview]
     @cast = movie[:credits][:cast]
     @reviews = movie[:reviews][:results]
+    @image = movie[:images][:backdrops][0][:file_path]
   end
 
   def detail_genres

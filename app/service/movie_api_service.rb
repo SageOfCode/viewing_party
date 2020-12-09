@@ -4,7 +4,7 @@ class MovieApiService
 
   def self.movie_details(movie_id)
     response = conn.get("/3/movie/#{movie_id}") do |req|
-      req.params[:append_to_response] = "credits,reviews"
+      req.params[:append_to_response] = "credits,reviews,images"
     end
     JSON.parse(response.body, symbolize_names: true)
   end
