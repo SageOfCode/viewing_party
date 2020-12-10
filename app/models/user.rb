@@ -5,6 +5,10 @@ class User < ApplicationRecord
 
   has_many :friendships, dependent: :destroy
   has_many :friends, through: :friendships, source: :friend
+  has_many :movie_parties
+  has_many :party_guests
+  has_many :movies, through: :party_guests
+
 
   has_secure_password
 

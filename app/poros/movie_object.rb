@@ -1,15 +1,14 @@
 class MovieObject
-  attr_reader :id,
-              :title,
+  attr_reader :title,
               :vote_average,
               :runtime,
               :genres,
               :overview,
               :cast,
-              :reviews
+              :reviews,
+              :movie_id
 
   def initialize(movie)
-    @id = movie[:id]
     @title = movie[:title]
     @vote_average = movie[:vote_average]
     @runtime = movie[:runtime]
@@ -17,11 +16,11 @@ class MovieObject
     @overview = movie[:overview]
     @cast = movie[:credits][:cast]
     @reviews = movie[:reviews][:results]
+    @movie_id = movie[:id]
   end
 
   def detail_genres
-    array = @genres.each_with_object([]) {|genre,array| array << genre[:name]}
-    array.join
+    @genres.each_with_object([]) {|genre,array| array << genre[:name]}
   end
 
   def detail_cast

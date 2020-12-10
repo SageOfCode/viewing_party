@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "As an authenticated user" do
   describe "When I visit the movie's detail page" do
     it 'I should see a movies info' do
-      VCR.use_cassette('movie_details') do 
+      VCR.use_cassette('movie_details') do
         user = User.create!(username: "Grant", email: "grant@awesomeguy.com", password: "password")
 
         visit "/login"
@@ -15,9 +15,9 @@ RSpec.describe "As an authenticated user" do
 
         visit "/"
         click_button "Discover Movies"
-        
+
         click_button "Find Top Rated Movies"
-        
+
         fill_in "movie", with: "Historias lamentables"
         click_button "Find Movies"
 
@@ -25,7 +25,7 @@ RSpec.describe "As an authenticated user" do
 
         expect(current_path).to eq("/movies/650747")
         expect(page).to have_content("Historias lamentables")
-      end 
+      end
     end
   end
-end 
+end
