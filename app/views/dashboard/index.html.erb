@@ -13,12 +13,24 @@
       <p>You currently have no friends</p>
     <% else %>
       <% @friends.each do |friend| %>
-        <%= friend.username %>
+        <%= friend.username %><br>
       <% end %>
     <% end %>
   </section><br>
 
   <section>
     <h2>Viewing Parties</h2>
+    <% @movie_parties.each do |party| %>
+      <h3>Movie: <%= party.movie.title %></h3>
+      <p>Date: <%= party.date %></p>
+      <p><%= party.time %></p>
+      <p><%= party.user.username %></p>
+      <% if party.user.id == current_user.id %>
+        <p>Hosting</p>
+      <% else %>
+        <p>Invited</p>
+      <% end %>
+       <br>
+    <% end %>
   </section>
 </body>
