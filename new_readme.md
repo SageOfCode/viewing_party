@@ -25,3 +25,7 @@ visit localhost:3000 in your web browser
 ## Statistics
    ![](https://img.shields.io/badge/Rails-5.2.4-informational?style=flat&logo=<LOGO_NAME>&logoColor=white&color=2bbc8a)    ![](https://img.shields.io/badge/Code-HTML-informational?style=flat&logo=<LOGO_NAME>&logoColor=white&color=2bbc8a) ![](https://img.shields.io/badge/Code-CSS-informational?style=flat&logo=<LOGO_NAME>&logoColor=white&color=2bbc8a)
 ![](https://img.shields.io/badge/Code-Ruby-informational?style=flat&logo=<LOGO_NAME>&logoColor=white&color=2bbc8a)
+
+### Schema
+### Created using [dbdiagram.io](https://dbdiagram.io/home)
+![Viewing Party Schema](https://dbdiagram.io/d/5fcfe5969a6c525a03ba51dc)
