@@ -31,8 +31,10 @@ RSpec.describe MovieObject do
     end
 
     it "detail_cast" do
-      expect(@movie.detail_cast).to include("Ryunosuke Kamiki")
-      expect(@movie.detail_cast).to include("Kazuhiko Inoue")
+      expected = "Taki Tachibana (voice),Baka Monikso (voice)"
+      expected_2 = "Taki's father (voice)"
+      expect(@movie.detail_cast["Ryunosuke Kamiki"]).to include(expected)
+      expect(@movie.detail_cast["Kazuhiko Inoue"]).to include(expected_2)
     end
 
     it "detail_runtime" do
