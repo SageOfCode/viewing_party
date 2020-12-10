@@ -1,6 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe PartyGuest, type: :model do
+  describe "Relationships" do
+    it {should belong_to(:friendship)}
+    it {should belong_to(:movie_party)}
+  end
 
   describe "Methods" do
     it ".add_party_guest" do
