@@ -13,18 +13,18 @@ RSpec.describe "user can search movies through the find movies button" do
   end
 
   it "user can discover top 40 movies and see results on page" do
+    VCR.use_cassette('top_movies') do
+      expect(current_path).to eq("/dashboard")
 
-    expect(current_path).to eq("/dashboard")
+      click_button "Discover Movies"
 
-    click_button "Discover Movies"
+      expect(current_path).to eq("/discover")
 
-    expect(current_path).to eq("/discover")
+      click_button "Find Top Rated Movies"
 
-    click_button "Find Top Rated Movies"
-    # save_and_open_page
-
-    expect(page).to have_css('.movies')
-    movies = find('.movies').text
-    expect(movies).to_not be_empty
+      expect(page).to have_content("Gabriel's Inferno Part III")
+      expect(page).to have_content("Your Name.")
+      expect(page).to have_content("Parasite")
+    end
   end
 end
