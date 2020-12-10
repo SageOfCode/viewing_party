@@ -28,4 +28,4 @@ visit localhost:3000 in your web browser
 
 ### Schema
 ### Created using [dbdiagram.io](https://dbdiagram.io/home)
-![Viewing Party Schema](cid:F6E8420D-34D2-4C45-9C6A-E3FE8C1FA339@hsd1.fl.comcast.net.)
+![Viewing Party Schema](Image 12-10-20 at 9.47 AM.jp)
