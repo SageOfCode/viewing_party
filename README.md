@@ -10,7 +10,13 @@
 
 Viewing Party web application utilizes a model-view-controller design pattern, CRUD functionality, and also consuming API which is a new subject for everyone. Users can register an account, that allows them to look through a ton of movies thanks to our API, and allows them to create a movie party. Once create they can invite friends to join there movie party for everyone can watch the movie together. 
 
-Students worked remotely over 10 days using Slack, Zoom, Github, and Github projects. Test-driven development drove the creation of the app with tests written in RSpec.
+Students worked remotely over 10 days using Slack, Zoom, Github, and Github projects. Test-driven development drove the creation of the app with tests written in RSpec. Here is our coverage, we used RSpec for our testing: 
+
+<img src="https://i.ibb.co/GtQGQ1Z/Screen-Shot-2020-12-10-at-10-04-10-AM.png" alt="Screen-Shot-2020-12-10-at-10-04-10-AM" border="0">
+
+## Our Database Strcuture
+<img src="https://i.ibb.co/jw8F8wF/Screen-Shot-2020-12-10-at-10-03-05-AM.png" alt="Screen-Shot-2020-12-10-at-10-03-05-AM" border="0">
+
 ## Instructions
 Our applicaiton is hosted on [Heroku](https://viewing-party-2008-be.herokuapp.com/), where you'll be able to view its functionality to the fullest.
 For usage on your local machine follow the instructions listed below:
