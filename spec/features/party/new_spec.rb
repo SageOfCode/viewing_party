@@ -38,15 +38,3 @@ RSpec.describe "as a logged in user" do
     end
   end
 end
-
-# As an authenticated user,
-# When I visit the new viewing party page,
-# I should see a form with the following:
-#
-#  Movie Title (that is un-editable)
-#  Duration of Party with a default value of movie runtime in minutes
-#  When: field to select date
-#  Start Time: field to select time
-#  Checkboxes next to each friend (if user has friends)
-#  Button to create a party
-# Details When the party is created, the authenticated user should be redirected back to the dashboard where the new event is shown. The event should also be seen by any friends that were invited when they log in.
