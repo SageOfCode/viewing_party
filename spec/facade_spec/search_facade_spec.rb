@@ -25,7 +25,7 @@ RSpec.describe SearchFacade do
       facade = SearchFacade.top_movies
       expect(facade).to be_an(Array)
       expect(facade[0][:title]).to eq("Gabriel's Inferno Part III")
-      expect(facade[30][:title]).to eq("Mortal Kombat Legends: Scorpion's Revenge")
+      expect(facade[30][:title]).to eq("Psycho")
     end
   end
 end
