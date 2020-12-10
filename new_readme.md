@@ -6,7 +6,11 @@
 [Jose Lopez](https://github.com/JoseLopez235) <br>
 [Sage Gonzales](https://github.com/SageOfCode) <br>
 ## Description
-"Viewing Party" is an application that allows a user to search movies through a movie API, and invite friends to watch those movies with them. A starter repo was provided which included some premade files. Students were put into groups of 2 or 3 and tasked with building off the starter repo. The Monster Shop web application utilizes a model-view-controller design pattern, CRUD functionality, and also consuming API which is a new subject for everyone. Users can register an account, that allows them to look through a ton of movies thanks to our API, and allows them to create a movie party. Once create they can invite friends to join there movie party for everyone can watch the movie together. Students worked remotely over 10 days using Slack, Zoom, Github, and Github projects. Test-driven development drove the creation of the app with tests written in RSpec.
+"Viewing Party" is an application that allows a user to search movies through a movie API, and invite friends to watch those movies with them. A starter repo was provided which included some premade files. Students were put into groups of 2 or 3 and tasked with building off the starter repo. 
+
+Viewing Party web application utilizes a model-view-controller design pattern, CRUD functionality, and also consuming API which is a new subject for everyone. Users can register an account, that allows them to look through a ton of movies thanks to our API, and allows them to create a movie party. Once create they can invite friends to join there movie party for everyone can watch the movie together. 
+
+Students worked remotely over 10 days using Slack, Zoom, Github, and Github projects. Test-driven development drove the creation of the app with tests written in RSpec.
 ## Instructions
 Our applicaiton is hosted on [Heroku](https://viewing-party-2008-be.herokuapp.com/), where you'll be able to view its functionality to the fullest.
 For usage on your local machine follow the instructions listed below:
