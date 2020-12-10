@@ -28,4 +28,4 @@ visit localhost:3000 in your web browser
 
 ### Schema
 ### Created using [dbdiagram.io](https://dbdiagram.io/home)
-![Viewing Party Schema](https://dbdiagram.io/d/5fcfe5969a6c525a03ba51dc)
+![Viewing Party Schema](<iframe width="560" height="315" src='https://dbdiagram.io/embed/5fcfe5969a6c525a03ba51dc'> </iframe>)
