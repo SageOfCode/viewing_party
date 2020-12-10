@@ -1,4 +1,4 @@
-class CreateMovieParty < ActiveRecord::Migration[5.2]
+class CreateMovieParties < ActiveRecord::Migration[5.2]
   def change
     create_table :movie_parties do |t|
       t.references :movie, foreign_key: true
