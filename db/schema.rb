@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_08_220259) do
+ActiveRecord::Schema.define(version: 2020_12_10_022539) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,15 @@ ActiveRecord::Schema.define(version: 2020_12_08_220259) do
     t.integer "friend_id"
   end
 
+  create_table "movie_parties", force: :cascade do |t|
+    t.bigint "movie_id"
+    t.bigint "user_id"
+    t.string "date"
+    t.string "time"
+    t.index ["movie_id"], name: "index_movie_parties_on_movie_id"
+    t.index ["user_id"], name: "index_movie_parties_on_user_id"
+  end
+
   create_table "movies", force: :cascade do |t|
     t.string "title"
     t.integer "api_id"
@@ -27,10 +36,10 @@ ActiveRecord::Schema.define(version: 2020_12_08_220259) do
   end
 
   create_table "party_guests", force: :cascade do |t|
-    t.bigint "viewing_party_id"
+    t.bigint "movie_party_id"
     t.bigint "friendship_id"
     t.index ["friendship_id"], name: "index_party_guests_on_friendship_id"
-    t.index ["viewing_party_id"], name: "index_party_guests_on_viewing_party_id"
+    t.index ["movie_party_id"], name: "index_party_guests_on_movie_party_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -42,15 +51,8 @@ ActiveRecord::Schema.define(version: 2020_12_08_220259) do
     t.string "username"
   end
 
-  create_table "viewing_parties", force: :cascade do |t|
-    t.bigint "movie_id"
-    t.bigint "user_id"
-    t.index ["movie_id"], name: "index_viewing_parties_on_movie_id"
-    t.index ["user_id"], name: "index_viewing_parties_on_user_id"
-  end
-
+  add_foreign_key "movie_parties", "movies"
+  add_foreign_key "movie_parties", "users"
   add_foreign_key "party_guests", "friendships"
-  add_foreign_key "party_guests", "viewing_parties"
-  add_foreign_key "viewing_parties", "movies"
-  add_foreign_key "viewing_parties", "users"
+  add_foreign_key "party_guests", "movie_parties"
 end
