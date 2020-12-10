@@ -8,6 +8,12 @@ RSpec.describe User, type: :model do
     it {should validate_presence_of(:password)}
   end
 
+  describe "Relationships" do
+    it {should have_many(:friendships)}
+    it {should have_many(:friends).through(:friendships)}
+    it {should have_many(:movie_parties)}
+  end
+
   describe "Methods" do
     it ".add_friends" do
       user = User.create!(username: "Grant", email: "grant@awesomeguy.com", password: "password", role: 1)

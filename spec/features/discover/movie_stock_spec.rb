@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "as a user" do
-  it "can access movies through the find movies button" do
+  it "can access movie search option through the discover movies button" do
     user = User.create!(username: "Grant", email: "grant@awesomeguy.com", password: "password", role: 1)
 
     visit "/login"
@@ -13,8 +13,8 @@ RSpec.describe "as a user" do
 
     expect(current_path).to eq("/dashboard")
 
-    click_button "Find Movies"
+    click_button "Discover Movies"
 
-    expect(current_path).to eq("/movies")
+    expect(current_path).to eq("/discover")
   end
 end

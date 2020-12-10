@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "As an authenticated user" do
   describe "When I visit the movie's detail page" do
     it 'I should see a movies info' do
-      VCR.use_cassette('movie_details') do
+      VCR.use_cassette('movie_info') do
         user = User.create!(username: "Grant", email: "grant@awesomeguy.com", password: "password")
 
         visit "/login"
